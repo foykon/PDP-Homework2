@@ -32,8 +32,7 @@ public class GameLogicA implements IGameLogic {
 		numbers = consoleInput.split(" ");
 		for (String number : numbers) {
 			colonies.add(new Colony('*',Integer.parseInt(number),tactics.get(0),productions.get(0)));
-        
-		}
+        }
 		
 		
 		/*for (Colony colony : colonies) {

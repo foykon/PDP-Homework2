@@ -22,15 +22,15 @@ public class Main {
 		System.out.println(consoleInput);
 		scanner.close();
 		
-		List<ITactic> tactics = new ArrayList<>();
-		tactics.add(new TacticA());
-		tactics.add(new TacticB());
-		
 		List<IProduction> productions = new ArrayList<>();
 		productions.add(new ProductionA());
 		productions.add(new ProductionB());
 		
-		IGameLogic gameLogic = new GameLogicA(tactics, productions); 
+		List<ITactic> tactics = new ArrayList<>();
+		tactics.add(new TacticA());
+		tactics.add(new TacticB());
+		
+		IGameLogic gameLogic = new GameLogicA(); 
 		gameLogic.startGame(consoleInput);
 		
 	}

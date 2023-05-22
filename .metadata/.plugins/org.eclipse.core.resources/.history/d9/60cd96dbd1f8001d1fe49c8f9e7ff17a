@@ -1,6 +1,5 @@
 package entity;
 
-import production.IProduction;
 import tactic.ITactic;
 
 public class Colony {
@@ -11,14 +10,12 @@ public class Colony {
 	public int countOfWin = 0;
 	public int countOfLose = 0;
 	public ITactic tactic;
-	public IProduction production;
 	
-	public Colony(char symbol, int colonyMember, ITactic tactic, IProduction production) {
+	public Colony(char symbol, int colonyMember, ITactic tactic) {
 		super();
 		this.colonyMember = colonyMember;
 		this.symbol = symbol;
 		this.tactic=tactic;
-		this.production=production;
 		setFoodStock(colonyMember);
 	}
 
