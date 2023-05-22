@@ -10,6 +10,5 @@ public interface IGameLogic {
 	void warReparations(Colony winner, Colony loser);
 	void colonyLifeLoops();
 	boolean checkColonyIsAlive(Colony colony);
-	int countOfAliveColony();
 
 }

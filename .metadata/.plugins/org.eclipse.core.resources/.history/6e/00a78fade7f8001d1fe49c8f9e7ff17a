@@ -6,9 +6,12 @@ import java.util.Scanner;
 
 import logic.GameLogicA;
 import logic.IGameLogic;
-import production.*;
-import tactic.*;
-
+import production.IProduction;
+import production.ProductionA;
+import production.ProductionB;
+import tactic.ITactic;
+import tactic.TacticA;
+import tactic.TacticB;
 
 public class Main {
 
@@ -22,12 +25,10 @@ public class Main {
 		List<ITactic> tactics = new ArrayList<>();
 		tactics.add(new TacticA());
 		tactics.add(new TacticB());
-		tactics.add(new TacticC());
 		
 		List<IProduction> productions = new ArrayList<>();
 		productions.add(new ProductionA());
 		productions.add(new ProductionB());
-		productions.add(new ProductionC());
 		
 		IGameLogic gameLogic = new GameLogicA(tactics, productions); 
 		gameLogic.startGame(consoleInput);

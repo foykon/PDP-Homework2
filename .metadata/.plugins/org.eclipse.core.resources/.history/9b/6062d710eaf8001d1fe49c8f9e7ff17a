@@ -38,8 +38,7 @@ public class GameLogicA implements IGameLogic {
 	public void startGame(String consoleInput) {
 		createColonies(consoleInput);
 		output();
-		while(countOfAliveColony() != 1) {
-			countOfAliveColony = 0;
+		while(countOfAliveColony() != 1 || countOfWar == 100) {
 			warTime();
 			colonyLifeLoops();
 			System.out.println("--------" + countOfWar + "------");

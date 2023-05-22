@@ -4,8 +4,8 @@ public class ProductionB implements IProduction {
 
 	@Override
 	public int produce() {
-		int randomNumber = (int) (Math.random() * 11);
-		return randomNumber;
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }
