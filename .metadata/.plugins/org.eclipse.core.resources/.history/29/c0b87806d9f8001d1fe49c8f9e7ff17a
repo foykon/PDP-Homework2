@@ -46,26 +46,7 @@ public class GameLogicA implements IGameLogic {
 
 	@Override
 	public void warTime() {
-
-		int number=0;
-		Colony[] arrayOfColonies = colonies.toArray(new Colony[colonies.size()]);
-		for (int i = 0; i < arrayOfColonies.length-1; i++) {
-			for (int j = i+1; j < arrayOfColonies.length; j++) {
-				if(arrayOfColonies[i].tactic.war() > arrayOfColonies[j].tactic.war()) {
-					number = 1000/(arrayOfColonies[i].tactic.war() - arrayOfColonies[j].tactic.war());
-					
-					
-				}else if (arrayOfColonies[j].tactic.war() > arrayOfColonies[i].tactic.war()) {
-					number = arrayOfColonies[j].tactic.war() - arrayOfColonies[i].tactic.war();
-					
-				}else {
-					if(arrayOfColonies[i].colonyMember >= arrayOfColonies[j].colonyMember) {
-						
-						
-					}
-				}
-			}
-		}
+		
 		
 	}
 	

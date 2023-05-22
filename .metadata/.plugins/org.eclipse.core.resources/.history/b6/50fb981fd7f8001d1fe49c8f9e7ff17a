@@ -4,6 +4,5 @@ public interface IGameLogic {
 
 	void startGame(String consoleInput);
 	void createColonies(String consoleInput);
-	void warTime();
 
 }
