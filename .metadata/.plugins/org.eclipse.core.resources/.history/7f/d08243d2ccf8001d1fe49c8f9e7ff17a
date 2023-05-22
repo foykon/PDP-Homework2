@@ -2,20 +2,15 @@ package main;
 
 import java.util.Scanner;
 
-import logic.GameLogicA;
-import logic.IGameLogic;
-
 public class Main {
 
 	public static void main(String[] args) {
-
+		// TODO Auto-generated method stub
+		
 		Scanner scanner = new Scanner(System.in);
 		String consoleInput = scanner.nextLine();
 		System.out.println(consoleInput);
 		scanner.close();
-		
-		IGameLogic gameLogic = new GameLogicA(); 
-		gameLogic.startGame();
 		
 	}
 
