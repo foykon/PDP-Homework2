@@ -24,7 +24,7 @@ public class GameLogicA implements IGameLogic {
 	
 	public void output() {
 		for (Colony colony : colonies) {
-			System.out.println(colony.colonyMember + "   " + colony.foodStock + "   " + colony.countOfWin + "   " + colony.countOfLose);
+			System.out.println(colony.colonyMember+" "+colony.foodStock+" "+colony.tactic.war());
 		
 		}
 	}
@@ -33,7 +33,7 @@ public class GameLogicA implements IGameLogic {
 	public void startGame(String consoleInput) {
 		createColonies(consoleInput);
 		output();
-		for (int i = 0; i < 6; i++) {
+		for (int i = 0; i < 5; i++) {
 			warTime();
 			colonyLifeLoops();
 			System.out.println("--------" + countOfWar + "------");

@@ -9,7 +9,6 @@ import tactic.ITactic;
 
 public class GameLogicA implements IGameLogic {
 
-	int countOfWar=0;
 	int difference=0;
 	String[] numbers;
 	List<Colony> colonies = new ArrayList<Colony>();
@@ -21,41 +20,43 @@ public class GameLogicA implements IGameLogic {
 		this.tactics = tactics;
 		this.productions = productions;
 	}
-	
-	public void output() {
-		for (Colony colony : colonies) {
-			System.out.println(colony.colonyMember + "   " + colony.foodStock + "   " + colony.countOfWin + "   " + colony.countOfLose);
-		
-		}
-	}
 
 	@Override
 	public void startGame(String consoleInput) {
 		createColonies(consoleInput);
 		output();
-		for (int i = 0; i < 6; i++) {
-			warTime();
-			colonyLifeLoops();
-			System.out.println("--------" + countOfWar + "------");
-			output();
-		
-		}
-		
+		warTime();
+		afterWar();
+		System.out.println("--------");
+		output();
+		warTime();
+		afterWar();
+		System.out.println("--------");
+		output();
+		warTime();
+		afterWar();
+		System.out.println("--------");
+		output();
 	}
 	
 	@Override
 	public void createColonies(String consoleInput) {
+		
 		numbers = consoleInput.split(" ");
 		for (String number : numbers) {
 			colonies.add(new Colony('*',Integer.parseInt(number),tactics.get(0),productions.get(0)));
         
 		}
-
+		
+		
+		
+		
 	}
 
 	@Override
 	public void warTime() {
-		countOfWar++;
+
+		
 		Colony[] arrayOfColonies = colonies.toArray(new Colony[colonies.size()]);
 		for (int i = 0; i < arrayOfColonies.length-1; i++) {
 			if(arrayOfColonies[i].isColonyAlive) {
@@ -103,12 +104,18 @@ public class GameLogicA implements IGameLogic {
 		loser.countOfLose++;
 		
 	}
+	
+	public void output() {
+		for (Colony colony : colonies) {
+			System.out.println(colony.colonyMember+" "+colony.foodStock+" "+colony.tactic.war());
+		
+		}
+	}
 
 	@Override
-	public void colonyLifeLoops() {
+	public void afterWar() {
 		for (Colony colony : colonies) {
 			colony.colonyMember *= 120 / 100;
-			colony.foodStock += colony.production.produce();
 			colony.foodStock -= (colony.colonyMember * 2);
 			checkColonyIsAlive(colony);
 			

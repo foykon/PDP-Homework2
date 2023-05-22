@@ -9,7 +9,6 @@ import tactic.ITactic;
 
 public class GameLogicA implements IGameLogic {
 
-	int countOfWar=0;
 	int difference=0;
 	String[] numbers;
 	List<Colony> colonies = new ArrayList<Colony>();
@@ -24,7 +23,7 @@ public class GameLogicA implements IGameLogic {
 	
 	public void output() {
 		for (Colony colony : colonies) {
-			System.out.println(colony.colonyMember + "   " + colony.foodStock + "   " + colony.countOfWin + "   " + colony.countOfLose);
+			System.out.println(colony.colonyMember+" "+colony.foodStock+" "+colony.tactic.war());
 		
 		}
 	}
@@ -33,14 +32,18 @@ public class GameLogicA implements IGameLogic {
 	public void startGame(String consoleInput) {
 		createColonies(consoleInput);
 		output();
-		for (int i = 0; i < 6; i++) {
-			warTime();
-			colonyLifeLoops();
-			System.out.println("--------" + countOfWar + "------");
-			output();
-		
-		}
-		
+		warTime();
+		afterWar();
+		System.out.println("--------");
+		output();
+		warTime();
+		afterWar();
+		System.out.println("--------");
+		output();
+		warTime();
+		afterWar();
+		System.out.println("--------");
+		output();
 	}
 	
 	@Override
@@ -55,7 +58,6 @@ public class GameLogicA implements IGameLogic {
 
 	@Override
 	public void warTime() {
-		countOfWar++;
 		Colony[] arrayOfColonies = colonies.toArray(new Colony[colonies.size()]);
 		for (int i = 0; i < arrayOfColonies.length-1; i++) {
 			if(arrayOfColonies[i].isColonyAlive) {
