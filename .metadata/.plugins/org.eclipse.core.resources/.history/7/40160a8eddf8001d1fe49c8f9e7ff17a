@@ -24,10 +24,8 @@ public class GameLogicA implements IGameLogic {
 	@Override
 	public void startGame(String consoleInput) {
 		createColonies(consoleInput);
-		output();
 		warTime();
-		System.out.println("--------");
-		output();
+		
 	}
 	
 	@Override
@@ -40,7 +38,10 @@ public class GameLogicA implements IGameLogic {
 		}
 		
 		
-		
+		/*for (Colony colony : colonies) {
+			System.out.println(colony.colonyMember+" "+colony.foodStock+" "+colony.tactic.war());
+			
+		}*/
 		
 	}
 
@@ -86,13 +87,6 @@ public class GameLogicA implements IGameLogic {
 		winner.foodStock += loser.foodStock * (percentDifference) / 100;
 		loser.foodStock -= loser.foodStock * (percentDifference) / 100;
 		
-	}
-	
-	public void output() {
-		for (Colony colony : colonies) {
-			System.out.println(colony.colonyMember+" "+colony.foodStock+" "+colony.tactic.war());
-		
-		}
 	}
 	
 	
