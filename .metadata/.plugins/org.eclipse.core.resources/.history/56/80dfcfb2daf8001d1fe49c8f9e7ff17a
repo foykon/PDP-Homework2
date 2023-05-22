@@ -7,6 +7,7 @@ public interface IGameLogic {
 	void startGame(String consoleInput);
 	void createColonies(String consoleInput);
 	void warTime();
-	void warReparations(Colony winner, Colony loser);
+	void warProfits(Colony colony, int difference);
+	void warLosses(Colony colony, int difference);
 
 }

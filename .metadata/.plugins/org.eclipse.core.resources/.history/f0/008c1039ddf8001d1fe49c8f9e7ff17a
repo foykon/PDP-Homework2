@@ -80,6 +80,7 @@ public class GameLogicA implements IGameLogic {
 		
 	}
 
+
 	@Override
 	public void warReparations(Colony winner, Colony loser) {
 		int percentDifference = difference * 100 / 1000;
