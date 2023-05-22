@@ -20,7 +20,6 @@ public class GameLogicA implements IGameLogic {
 		super();
 		this.tactics = tactics;
 		this.productions = productions;
-		
 	}
 	
 	public void output() {
@@ -109,28 +108,27 @@ public class GameLogicA implements IGameLogic {
 	@Override
 	public void colonyLifeLoops() {
 		for (Colony colony : colonies) {
-			if(checkColonyIsAlive(colony)) {
-				colony.colonyMember *= 120 / 100;
-				colony.foodStock += colony.production.produce();
-				colony.foodStock -= (colony.colonyMember * 2);
-				
-			}
+			checkColonyIsAlive(colony);
+			colony.colonyMember *= 120 / 100;
+			colony.foodStock += colony.production.produce();
+			colony.foodStock -= (colony.colonyMember * 2);
+			checkColonyIsAlive(colony);
 			
 		}
 		
 	}
 
 	@Override
-	public boolean checkColonyIsAlive(Colony colony) {
+	public void checkColonyIsAlive(Colony colony) {
 		if(colony.foodStock < 0 || colony.colonyMember < 0) {
 			colony.colonyMember = 0;
 			colony.foodStock = 0;
 			colony.isColonyAlive = false;
-			return false;
 			
 		}
-		return true;
 	
 	}
+	
+
 	
 }
