@@ -25,11 +25,9 @@ public class GameLogicA implements IGameLogic {
 			colonies.add(new Colony('*',Integer.parseInt(number)));
         }
 		
-		
-		/*for (Colony colony : colonies) {
-			System.out.println(colony.colonyMember+" "+colony.foodStock);
-			
-		}*/
+		for (Colony colony : colonies) {
+			System.out.println(colony.colonyMember);
+		}
 		
 	}
 

@@ -12,11 +12,12 @@ public class Colony {
 		super();
 		this.colonyMember = colonyMember;
 		this.symbol = symbol;
-		setFoodStock(colonyMember);
 	}
 
 	public void setFoodStock(int colonyMember) {
 		foodStock = colonyMember*colonyMember;
 	}
 	
+	
+
 }

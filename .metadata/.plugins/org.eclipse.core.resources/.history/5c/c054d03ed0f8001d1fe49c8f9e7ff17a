@@ -4,7 +4,6 @@ public class Colony {
 
 	public char symbol;
 	public int colonyMember;
-	public int foodStock = 0;
 	public int countOfWin = 0;
 	public int countOfLose = 0;
 	
@@ -12,11 +11,6 @@ public class Colony {
 		super();
 		this.colonyMember = colonyMember;
 		this.symbol = symbol;
-		setFoodStock(colonyMember);
 	}
 
-	public void setFoodStock(int colonyMember) {
-		foodStock = colonyMember*colonyMember;
-	}
-	
 }

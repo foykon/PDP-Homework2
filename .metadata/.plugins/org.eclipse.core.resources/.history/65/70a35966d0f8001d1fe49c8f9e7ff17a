@@ -23,13 +23,9 @@ public class GameLogicA implements IGameLogic {
 		numbers = consoleInput.split(" ");
 		for (String number : numbers) {
 			colonies.add(new Colony('*',Integer.parseInt(number)));
+			
         }
 		
-		
-		/*for (Colony colony : colonies) {
-			System.out.println(colony.colonyMember+" "+colony.foodStock);
-			
-		}*/
 		
 	}
 
