@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="logic.GameLogicA"/>
+    <fullyQualifiedTypeName name="logic.IGameLogic"/>
+    <fullyQualifiedTypeName name="production.ProductionA"/>
+    <fullyQualifiedTypeName name="production.ProductionB"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="tactic.TacticA"/>
+    <fullyQualifiedTypeName name="tactic.TacticB"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="entity.Colony"/>
+    <fullyQualifiedTypeName name="tactic.ITactic"/>
+    <fullyQualifiedTypeName name="production.IProduction"/>
+    <fullyQualifiedTypeName name="java.util.concurrent.ThreadLocalRandom"/>
+    <fullyQualifiedTypeName name="tactic.TacticC"/>
+    <fullyQualifiedTypeName name="java.util.Random"/>
+</qualifiedTypeNameHistroy>
