@@ -37,7 +37,7 @@ public class GameLogicA implements IGameLogic {
 		
 		
 		/*for (Colony colony : colonies) {
-			System.out.println(colony.colonyMember+" "+colony.foodStock+" "+colony.tactic.war());
+			System.out.println(colony.colonyMember+" "+colony.foodStock);
 			
 		}*/
 		

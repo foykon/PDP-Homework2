@@ -1,11 +1,14 @@
 package tactic;
 
+import java.util.Random;
+
 public class TacticA implements ITactic {
 
 	@Override
 	public int war() {
-		// TODO Auto-generated method stub
-		return 0;
+		Random random = new Random();
+        int randomNumber = random.nextInt(1001); // 0 ile 1000 arasında bir rastgele sayı üretiyor
+		return randomNumber;
 	}
 
 }
