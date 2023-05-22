@@ -1,0 +1,8 @@
+package entity;
+
+public class Colony {
+
+	
+	int colonyMember;
+	char symbol;
+}

@@ -2,10 +2,10 @@ package entity;
 
 public class Colony {
 
-	public char symbol;
-	public int colonyMember;
+	int colonyMember;
+	char symbol;
 	
-	public Colony( char symbol,int colonyMember) {
+	public Colony(int colonyMember, char symbol) {
 		super();
 		this.colonyMember = colonyMember;
 		this.symbol = symbol;

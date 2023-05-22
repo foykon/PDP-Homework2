@@ -2,7 +2,7 @@ package logic;
 
 public interface IGameLogic {
 
-	void startGame(String consoleInput);
+	void startGame();
 	void createColonies(String consoleInput);
 
 }

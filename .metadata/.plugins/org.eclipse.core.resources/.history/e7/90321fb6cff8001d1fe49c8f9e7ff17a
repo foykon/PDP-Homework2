@@ -2,8 +2,8 @@ package entity;
 
 public class Colony {
 
-	public char symbol;
-	public int colonyMember;
+	char symbol;
+	int colonyMember;
 	
 	public Colony( char symbol,int colonyMember) {
 		super();

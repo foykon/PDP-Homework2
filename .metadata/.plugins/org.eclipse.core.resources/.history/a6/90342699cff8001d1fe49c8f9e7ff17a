@@ -22,12 +22,11 @@ public class GameLogicA implements IGameLogic {
 		
 		numbers = consoleInput.split(" ");
 		for (String number : numbers) {
-			colonies.add(new Colony('*',Integer.parseInt(number)));
+			//colonies.add(new Colony('*',Integer.parseInt(number)));
+			Colony colony = new Colony('*', Integer.parseInt(number));
+			colonies.add(colony);
         }
 		
-		for (Colony colony : colonies) {
-			System.out.println(colony.colonyMember);
-		}
 		
 	}
 

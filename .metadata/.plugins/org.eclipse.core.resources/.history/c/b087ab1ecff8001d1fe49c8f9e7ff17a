@@ -1,6 +1,5 @@
 package logic;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import entity.Colony;
@@ -8,7 +7,7 @@ import entity.Colony;
 public class GameLogicA implements IGameLogic {
 
 	String[] numbers;
-	List<Colony> colonies = new ArrayList<Colony>();
+	List<Colony> colonies;
 	
 	
 	@Override
@@ -25,9 +24,6 @@ public class GameLogicA implements IGameLogic {
 			colonies.add(new Colony('*',Integer.parseInt(number)));
         }
 		
-		for (Colony colony : colonies) {
-			System.out.println(colony.colonyMember);
-		}
 		
 	}
 
