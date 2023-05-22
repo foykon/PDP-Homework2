@@ -129,7 +129,7 @@ public class GameLogicA implements IGameLogic {
 
 	@Override
 	public boolean checkColonyIsAlive(Colony colony) {
-		if(colony.foodStock <= 0 || colony.colonyMember <= 0) {
+		if(colony.foodStock < 0 || colony.colonyMember < 0) {
 			colony.isColonyAlive = false;
 			colony.colonyMember = 0;
 			colony.foodStock = 0;
