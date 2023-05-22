@@ -8,7 +8,5 @@ public interface IGameLogic {
 	void createColonies(String consoleInput);
 	void warTime();
 	void warReparations(Colony winner, Colony loser);
-	void afterWar();
-	void checkColonyIsAlive(Colony colony);
 
 }

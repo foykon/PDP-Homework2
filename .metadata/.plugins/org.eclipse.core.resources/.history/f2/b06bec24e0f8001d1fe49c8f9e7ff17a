@@ -26,15 +26,6 @@ public class GameLogicA implements IGameLogic {
 		createColonies(consoleInput);
 		output();
 		warTime();
-		afterWar();
-		System.out.println("--------");
-		output();
-		warTime();
-		afterWar();
-		System.out.println("--------");
-		output();
-		warTime();
-		afterWar();
 		System.out.println("--------");
 		output();
 	}
@@ -59,36 +50,30 @@ public class GameLogicA implements IGameLogic {
 		
 		Colony[] arrayOfColonies = colonies.toArray(new Colony[colonies.size()]);
 		for (int i = 0; i < arrayOfColonies.length-1; i++) {
-			if(arrayOfColonies[i].isColonyAlive) {
-				for (int j = i+1; j < arrayOfColonies.length; j++) {
-					if(arrayOfColonies[j].isColonyAlive) {
-						if(arrayOfColonies[i].tactic.war() > arrayOfColonies[j].tactic.war()) {
-							difference = arrayOfColonies[i].tactic.war() - arrayOfColonies[j].tactic.war();
-							warReparations(arrayOfColonies[i], arrayOfColonies[j]);
-							
-						}else if (arrayOfColonies[j].tactic.war() > arrayOfColonies[i].tactic.war()) {
-							difference = arrayOfColonies[j].tactic.war() - arrayOfColonies[i].tactic.war();
-							warReparations(arrayOfColonies[j], arrayOfColonies[i]);
-							
-						}else {
-							if(arrayOfColonies[i].colonyMember >= arrayOfColonies[j].colonyMember) {
-								difference = arrayOfColonies[i].colonyMember - arrayOfColonies[j].colonyMember;
-								warReparations(arrayOfColonies[i], arrayOfColonies[j]);
-								
-							}else {
-								difference = arrayOfColonies[j].colonyMember - arrayOfColonies[i].colonyMember;
-								warReparations(arrayOfColonies[j], arrayOfColonies[i]);
-								
-							}
-							
-						}
-						difference=0;
+			for (int j = i+1; j < arrayOfColonies.length; j++) {
+				if(arrayOfColonies[i].tactic.war() > arrayOfColonies[j].tactic.war()) {
+					difference = arrayOfColonies[i].tactic.war() - arrayOfColonies[j].tactic.war();
+					warReparations(arrayOfColonies[i], arrayOfColonies[j]);
+					
+				}else if (arrayOfColonies[j].tactic.war() > arrayOfColonies[i].tactic.war()) {
+					difference = arrayOfColonies[j].tactic.war() - arrayOfColonies[i].tactic.war();
+					warReparations(arrayOfColonies[j], arrayOfColonies[i]);
+					
+				}else {
+					if(arrayOfColonies[i].colonyMember >= arrayOfColonies[j].colonyMember) {
+						difference = arrayOfColonies[i].colonyMember - arrayOfColonies[j].colonyMember;
+						warReparations(arrayOfColonies[i], arrayOfColonies[j]);
 						
-					}else continue;
+					}else {
+						difference = arrayOfColonies[j].colonyMember - arrayOfColonies[i].colonyMember;
+						warReparations(arrayOfColonies[j], arrayOfColonies[i]);
 						
+					}
+					
 				}
-			
-			}else continue;
+				difference=0;
+				
+			}
 			
 		}
 		
@@ -117,23 +102,26 @@ public class GameLogicA implements IGameLogic {
 		for (Colony colony : colonies) {
 			colony.colonyMember *= 120 / 100;
 			colony.foodStock -= (colony.colonyMember * 2);
-			checkColonyIsAlive(colony);
-			
+		
 		}
 		
 	}
 
 	@Override
-	public void checkColonyIsAlive(Colony colony) {
+	public boolean checkColonyIsAlive(Colony colony) {
 		if(colony.foodStock < 0 || colony.colonyMember < 0) {
-			colony.colonyMember = 0;
-			colony.foodStock = 0;
-			colony.isColonyAlive = false;
-			
+			colony
+			return false;
+		
 		}
+			
+		return true;
 	
 	}
 	
+	
+	
 
+	
 	
 }

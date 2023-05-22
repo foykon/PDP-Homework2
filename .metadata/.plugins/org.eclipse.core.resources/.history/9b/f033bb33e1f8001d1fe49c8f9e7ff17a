@@ -26,15 +26,6 @@ public class GameLogicA implements IGameLogic {
 		createColonies(consoleInput);
 		output();
 		warTime();
-		afterWar();
-		System.out.println("--------");
-		output();
-		warTime();
-		afterWar();
-		System.out.println("--------");
-		output();
-		warTime();
-		afterWar();
 		System.out.println("--------");
 		output();
 	}
