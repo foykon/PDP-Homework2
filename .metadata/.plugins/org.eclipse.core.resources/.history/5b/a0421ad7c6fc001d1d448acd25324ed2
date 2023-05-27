@@ -1,0 +1,11 @@
+package production;
+
+public class ProductionB implements IProduction {
+
+	@Override
+	public int produce() {
+		int randomNumber = (int) (Math.random() * 11);
+		return randomNumber;
+	}
+
+}

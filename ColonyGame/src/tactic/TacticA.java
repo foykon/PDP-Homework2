@@ -1,3 +1,11 @@
+/**
+*
+* @author Furkan YILDIZ furkan.yildiz12@ogr.sakarya.edu.tr
+* @since 22 Mayıs 2023
+* <p>
+* taktika sınıfı random sayı üretmek için random classı kullanılmıştır
+* </p>
+*/
 package tactic;
 
 import java.util.Random;

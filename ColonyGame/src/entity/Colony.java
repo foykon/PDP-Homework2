@@ -1,3 +1,13 @@
+/**
+*
+* @author Furkan YILDIZ furkan.yildiz12@ogr.sakarya.edu.tr
+* @since 22 Mayıs 2023
+* <p>
+* Colony sınıfı koloni özelliklerini tanımladığımız sınıftır 
+* </p>
+*/
+
+
 package entity;
 
 import production.IProduction;

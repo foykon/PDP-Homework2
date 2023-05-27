@@ -1,3 +1,12 @@
+/**
+*
+* @author Furkan YILDIZ furkan.yildiz12@ogr.sakarya.edu.tr
+* @since 22 Mayıs 2023
+* <p>
+* game logic interface i mainde oyun mantığını bu interface üzerinden çağırıyoruz böylece yeni bir oyun yapısı yazılırsa kolayca değiştirlebilsin
+* </p>
+*/
+
 package logic;
 
 import entity.Colony;

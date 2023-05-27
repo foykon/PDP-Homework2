@@ -1,3 +1,11 @@
+/**
+*
+* @author Furkan YILDIZ furkan.yildiz12@ogr.sakarya.edu.tr
+* @since 22 Mayıs 2023
+* <p>
+* üretim sınıfı random sayı üretmek için random classı kullanılmıştır
+* </p>
+*/
 package production;
 
 import java.util.Random;

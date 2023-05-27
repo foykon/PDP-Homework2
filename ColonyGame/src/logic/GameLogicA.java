@@ -1,3 +1,12 @@
+/**
+*
+* @author Furkan YILDIZ furkan.yildiz12@ogr.sakarya.edu.tr
+* @since 22 Mayıs 2023
+* <p>
+* oyunun kurallarını yazdığımız sınıf ayrıntılı olarak yorum satırlarında belirtilmiştir
+* </p>
+*/
+
 package logic;
 
 import java.util.ArrayList;
@@ -26,6 +35,7 @@ public class GameLogicA implements IGameLogic {
 		
 	}
 	
+	//ekran çıktısı almak için kullandığımız fonksiyon
 	public void output() {
 		System.out.println("colonySymbol\tcolonyMember\tfoodStock\tcoutOfWin\tcountOfLose");
 		for (Colony colony : colonies) {
@@ -35,7 +45,8 @@ public class GameLogicA implements IGameLogic {
 				System.out.println(colony.symbol + "\t\t--\t\t--\t\t" + colony.countOfWin + "\t\t" + colony.countOfLose);
 		}
 	}
-
+	
+	//oyunun başlamasını sağlayan ve gerekli diğer fonksiyonları çağırdığımız method 
 	@Override
 	public void startGame(String consoleInput) {
 		createColonies(consoleInput);
@@ -51,6 +62,7 @@ public class GameLogicA implements IGameLogic {
 		
 	}
 	
+	//colony sınıfının kurucu fonksiyonu ila tek tek kolonileri oluşturduğumuz method
 	@Override
 	public void createColonies(String consoleInput) {
 		numbers = consoleInput.split(" ");
@@ -62,16 +74,20 @@ public class GameLogicA implements IGameLogic {
 
 	}
 
+	//savaş anın kuralları 
 	@Override
 	public void warTime() {
 		countOfWar++;
 		Colony[] arrayOfColonies = colonies.toArray(new Colony[colonies.size()]);
 		for (int i = 0; i < arrayOfColonies.length-1; i++) {
 			if(arrayOfColonies[i].isColonyAlive) {
+				//eğer koloni canlı ise koloni gücünü değişkene atıyoruz 
 				int iWarPower = arrayOfColonies[i].tactic.war();
 				for (int j = i+1; j < arrayOfColonies.length; j++) {
 					if(arrayOfColonies[j].isColonyAlive) {
+						//eğer koloni canlı ise koloni gücünü değişkene atıyoruz 
 						int jWarPower = arrayOfColonies[i].tactic.war();
+						//kolonilerin gücünü karşılaştırdığımız if yapısı
 						if(iWarPower > jWarPower) {
 							difference = iWarPower - jWarPower;
 							warReparations(arrayOfColonies[i], arrayOfColonies[j]);
@@ -103,7 +119,8 @@ public class GameLogicA implements IGameLogic {
 		}
 		
 	}
-
+	
+	//savaşta kazanan ve kaybeden kolonilerin yaptırımları ve kazandıklarını uyguladığımız method
 	@Override
 	public void warReparations(Colony winner, Colony loser) {
 		int percentDifference = difference * 100 / 1000;
@@ -115,6 +132,7 @@ public class GameLogicA implements IGameLogic {
 		
 	}
 
+	//her koloninin her tur yaşaması gerekn yaşamsal faliyerler
 	@Override
 	public void colonyLifeLoops() {
 		for (Colony colony : colonies) {
@@ -129,6 +147,7 @@ public class GameLogicA implements IGameLogic {
 		
 	}
 
+	//colony canlı mı değil mi diye kontrol edilen bool method
 	@Override
 	public boolean checkColonyIsAlive(Colony colony) {
 		if(colony.foodStock <= 0 || colony.colonyMember <= 0) {
@@ -142,6 +161,7 @@ public class GameLogicA implements IGameLogic {
 	
 	}
 
+	
 	@Override
 	public int countOfAliveColony() {
 		for (Colony colony : colonies) {
